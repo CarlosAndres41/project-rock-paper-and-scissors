@@ -6,4 +6,10 @@ function getComputerChoice() {
     return rockPaperOrScissors[randomNumber]
 }
 
-getComputerChoice()
+// Add the option for a player to pick rock, paper or scissors
+let playerSelection = prompt("Write your selection. Rock, Paper or Scissors:")
+
+// Format player selection
+let lowerCase = playerSelection.toLowerCase()
+let playerSelectionFormatted = `${lowerCase[0].toUpperCase()}${lowerCase.slice(1)}`
+console.log(playerSelectionFormatted);
