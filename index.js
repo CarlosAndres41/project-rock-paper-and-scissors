@@ -17,23 +17,22 @@ let lowerCase = playerSelection.toLowerCase()
 let playerSelectionFormatted = `${lowerCase[0].toUpperCase()}${lowerCase.slice(1)}`
 
 // Create a function that plays a single round
-function playGame(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     let player = playerSelection;
     let pc = computerSelection;
 
     if (player === pc) {
         return `It's a tie, both players picked: ${player}.`
     } else {
-        if (player == "Paper" && pc == "Rock") {
-            return `You win. ${player} beats ${pc}`
-        } else if (player == "Rock" && pc == "Scissors") {
-            return `You win. ${player} beats ${pc}`
-        } else if (player == "Scissors" && pc == "Paper") {
-            return `You win. ${player} beats ${pc}`
+        if ((player == "Paper" && pc == "Rock") ||
+            (player == "Rock" && pc == "Scissors") ||
+            (player == "Scissors" && pc == "Paper")
+        ) {
+            return `You win! ${player} beats ${pc}`
         } else {
-            return `You Lose. ${pc} beats ${player}`
+            return `You Lose! ${pc} beats ${player}`
         }
     }
 }
 
-console.log(playGame(playerSelectionFormatted, computerSelection));
+console.log(playRound(playerSelectionFormatted, computerSelection));
