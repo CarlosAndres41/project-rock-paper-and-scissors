@@ -24,7 +24,15 @@ function playGame(playerSelection, computerSelection) {
     if (player === pc) {
         return `It's a tie, both players picked: ${player}.`
     } else {
-        return "There was a winner."
+        if (player == "Paper" && pc == "Rock") {
+            return `You win. ${player} beats ${pc}`
+        } else if (player == "Rock" && pc == "Scissors") {
+            return `You win. ${player} beats ${pc}`
+        } else if (player == "Scissors" && pc == "Paper") {
+            return `You win. ${player} beats ${pc}`
+        } else {
+            return `You Lose. ${pc} beats ${player}`
+        }
     }
 }
 
