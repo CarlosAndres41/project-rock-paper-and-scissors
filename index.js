@@ -52,3 +52,12 @@ for (let i = 0; i < 5; i++) {
     console.log(`Current score: Player: ${playerScore}, Computer ${computerScore}`);
 }
 
+// Determine the winner 
+
+if (playerScore > computerScore) {
+    console.log(`Final Score: Player: ${playerScore}, Computer: ${computerScore}\nYou win!\nRefresh the page to play again`)
+} else if (playerScore == computerScore) {
+    console.log(`Final Score: Player: ${playerScore}, Computer: ${computerScore}\nIt's a tie!\nRefresh the page to play again`)
+} else {
+    console.log(`Final Score: Player: ${computerScore}, Computer: ${playerScore}\nYou Lose!\nRefresh the page to play again`)
+}
