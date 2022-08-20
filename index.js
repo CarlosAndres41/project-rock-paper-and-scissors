@@ -32,6 +32,9 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// Tell user to open console before starting
+alert("Remember to open the console before starting the game")
+
 // Make the game repeat 5 times
 
 for (let i = 0; i < 5; i++) {
