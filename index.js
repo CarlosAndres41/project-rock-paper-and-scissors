@@ -1,3 +1,8 @@
+// Create variables to keep count of the score 
+
+let playerScore = 0
+let computerScore = 0
+
 function getComputerChoice() {
     const rockPaperOrScissors = ["Rock", "Paper", "Scissors"]
     // Generate a random number beteen 0 and 2
@@ -18,8 +23,10 @@ function playRound(playerSelection, computerSelection) {
             (player == "Rock" && pc == "Scissors") ||
             (player == "Scissors" && pc == "Paper")
         ) {
+            playerScore += 1
             return `You win! ${player} beats ${pc}`
         } else {
+            computerScore += 1
             return `You Lose! ${pc} beats ${player}`
         }
     }
@@ -40,5 +47,8 @@ for (let i = 0; i < 5; i++) {
     let lowerCase = playerSelection.toLowerCase()
     let playerSelectionFormatted = `${lowerCase[0].toUpperCase()}${lowerCase.slice(1)}`
     console.log(playRound(playerSelectionFormatted, computerSelection));
+
+    // Console log the current score
+    console.log(`Current score: Player: ${playerScore}, Computer ${computerScore}`);
 }
 
