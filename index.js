@@ -11,9 +11,6 @@ function getComputerChoice() {
     return rockPaperOrScissors[randomNumber]
 }
 
-
-
-
 // Add event listeners to buttons
 const buttons = document.getElementsByClassName("btn");
 for (let i = 0; i < buttons.length; i++) {
