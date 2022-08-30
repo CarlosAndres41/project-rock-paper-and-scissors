@@ -11,62 +11,54 @@ function getComputerChoice() {
     return rockPaperOrScissors[randomNumber]
 }
 
-// Create a function that plays a single round
-function playRound(playerSelection, computerSelection) {
-    let player = playerSelection;
-    let pc = computerSelection;
 
-    if (player === pc) {
-        return `It's a tie, both players picked: ${player}.`
-    } else {
-        if ((player == "Paper" && pc == "Rock") ||
-            (player == "Rock" && pc == "Scissors") ||
-            (player == "Scissors" && pc == "Paper")
-        ) {
-            playerScore += 1
-            return `You win! ${player} beats ${pc}`
-        } else {
-            computerScore += 1
-            return `You Lose! ${pc} beats ${player}`
-        }
-    }
-}
+
 
 // Add event listeners to buttons
-const rockBtn = document.querySelector('#rockBtn');
-rockBtn.addEventListener('click', () => {
-    console.log("Rock was clicked");
-})
-const paperBtn = document.querySelector('#paperBtn');
-paperBtn.addEventListener('click', () => {
-    console.log("Paper was clicked");
-})
-const scissorsBtn = document.querySelector('#scissorsBtn');
-scissorsBtn.addEventListener('click', () => {
-    console.log("Scissors was clicked");
-})
+const buttons = document.getElementsByClassName("btn");
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', (event) => {
+        let player = event.target.textContent;
+        let pc = getComputerChoice();
+
+        if (player === pc) {
+            console.log(`It's a tie, both players picked: ${player}.`);
+        } else {
+            if ((player == "Paper" && pc == "Rock") ||
+                (player == "Rock" && pc == "Scissors") ||
+                (player == "Scissors" && pc == "Paper")
+            ) {
+                playerScore += 1
+                console.log(`You win! ${player} beats ${pc}`);
+            } else {
+                computerScore += 1
+                console.log(`You Lose! ${pc} beats ${player}`);
+            }
+        }
+    })
+}
 
 
 
 // Make the game repeat 5 times
 
-for (let i = 0; i < 5; i++) {
-    console.log(`Round ${i + 1}`);
+// for (let i = 0; i < 5; i++) {
+//     console.log(`Round ${i + 1}`);
 
-    // Assign getComputerChoice to a variable 
-    let computerSelection = getComputerChoice()
+//     // Assign getComputerChoice to a variable 
+//     let computerSelection = getComputerChoice()
 
-    // Add the option for a player to pick rock, paper or scissors
-    // let playerSelection = prompt("Write your selection. Rock, Paper or Scissors:")
+//     // Add the option for a player to pick rock, paper or scissors
+//     // let playerSelection = prompt("Write your selection. Rock, Paper or Scissors:")
 
-    // Format player selection
-    let lowerCase = playerSelection.toLowerCase()
-    let playerSelectionFormatted = `${lowerCase[0].toUpperCase()}${lowerCase.slice(1)}`
-    console.log(playRound(playerSelectionFormatted, computerSelection));
+//     // Format player selection
+//     let lowerCase = playerSelection.toLowerCase()
+//     let playerSelectionFormatted = `${lowerCase[0].toUpperCase()}${lowerCase.slice(1)}`
+//     console.log(playRound(playerSelectionFormatted, computerSelection));
 
-    // Console log the current score
-    console.log(`Current score: Player: ${playerScore}, Computer ${computerScore}`);
-}
+//     // Console log the current score
+//     console.log(`Current score: Player: ${playerScore}, Computer ${computerScore}`);
+// }
 
 // Determine the winner 
 
