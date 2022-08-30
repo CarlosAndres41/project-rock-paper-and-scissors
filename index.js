@@ -3,6 +3,8 @@
 let playerScore = 0
 let computerScore = 0
 
+const buttons = document.getElementsByClassName("btn");
+
 let roundMsg = document.querySelector(".msg");
 let playerScoreH3 = document.querySelector(".playerScore");
 let computerScoreH3 = document.querySelector(".pcScore");
@@ -18,16 +20,19 @@ function getComputerChoice() {
 
 function checkWinner() {
     if (playerScore === 5) {
-        console.log("player wins");
         finalScore.textContent = `Final score: You: ${playerScore}, Computer: ${computerScore}. You Win!!`;
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        };
     } else if (computerScore === 5) {
-        console.log("pc wins");
         finalScore.textContent = `Final score: Computer: ${computerScore}, You: ${playerScore}. You Lose.`;
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        };
     };
 };
 
 // Add event listeners to buttons
-const buttons = document.getElementsByClassName("btn");
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', (event) => {
         let player = event.target.textContent;
