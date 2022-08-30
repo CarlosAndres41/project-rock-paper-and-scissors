@@ -32,6 +32,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// Add event listeners to buttons
+const rockBtn = document.querySelector('#rockBtn');
+rockBtn.addEventListener('click', () => {
+    console.log("Rock was clicked");
+})
+const paperBtn = document.querySelector('#paperBtn');
+paperBtn.addEventListener('click', () => {
+    console.log("Paper was clicked");
+})
+const scissorsBtn = document.querySelector('#scissorsBtn');
+scissorsBtn.addEventListener('click', () => {
+    console.log("Scissors was clicked");
+})
+
 
 
 // Make the game repeat 5 times
