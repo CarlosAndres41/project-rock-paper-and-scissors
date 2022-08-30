@@ -32,8 +32,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Tell user to open console before starting
-alert("Remember to open the console before starting the game")
+
 
 // Make the game repeat 5 times
 
@@ -44,7 +43,7 @@ for (let i = 0; i < 5; i++) {
     let computerSelection = getComputerChoice()
 
     // Add the option for a player to pick rock, paper or scissors
-    let playerSelection = prompt("Write your selection. Rock, Paper or Scissors:")
+    // let playerSelection = prompt("Write your selection. Rock, Paper or Scissors:")
 
     // Format player selection
     let lowerCase = playerSelection.toLowerCase()
